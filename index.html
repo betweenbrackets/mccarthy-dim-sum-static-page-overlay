@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+<!-- NOTES on my dim sum project -->
+<!-- I began with this project https://betweenbrackets.github.io/recipe-card-static-page/ -->
+<!-- and redesigned it to this project towards my love of dim sum. -->
+<!-- I updated the pallette, the images, and the text. -->
+<!-- Issue: the dim sum recipes were longer than the previous recipes and exceeded the styling: there was no white background, just gray text on the pale yellow background. -->
+<!-- I updated the style rules to address this. -->
+<!-- Issue: I updated the styles so that the recipes' overflow scrolled, but did not like the clunky user-side experience. -->
+<!-- I updated to an overlay after searching for what might be available in hover, display: block, and display: none. I discovered w3schools how to. What a great find!-->
+<!-- Issue: the overlay called only the first recipe. -->
+<!-- I updated the id = "overlay", the functions, and the styles to be dish specific. -->
+<!-- Issue: the overlay for steamed pork buns exceeded the browser due to the length of the directions. -->
+<!-- I added a height to the styles to enable a scroll bar. -->
+
+<!-- Moving forward: I find this to be "heavy code" in that there is a lot of repetition within the HTML. How do I update this? An array in the JavaScript? React props to diff the DOM? A Python list with an SQL database? PHP modules that I call in to a file? JSON? But, how would the recipes line out as objects? Stay tuned. This has been a great weekend project in June of 2020! -->
+
+    <head>
+        <meta charset="utf-8">
+        <title>Famous Dim Sum Trio!</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700%7COpen+Sans&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "css/normalize.css">
+        <link rel = "stylesheet" href = "css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="img/dumpling-logo.png" alt="steamed dumplings in tray">
+            <h1>The 'Guangdong big three' - the famous dim sum trio!</h1>
+        </header>
+        <main>
+<!-- ----- SHRIMP DUMPLINGS ----- -->
+            <article id="shrimp-dumplings" class="card">
+                <div class="image"></div>
+                <div class="recipe">
+                    <h2>Shrimp Dumplings || Har Gow</h2>
+                    <div class="time">
+                        <div class="total">
+                            <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 24 </p>
+                        </div>
+                        <div class="prep">
+                            <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 1 Hour </p>
+                        </div>
+                        <div class="cook">
+                            <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 10 Min </p>
+                        </div>
+                    </div>
+                    <p class="description">Whole shrimp and juicy filling in a translucent wrapper! A classic Cantonese dish!</p>
+
+<!-- BEGIN SHRIMP DUMPLINGS OVERLAY -->
+                    <div id="overlay-shrimp-dumplings" onclick="shrimpDumplingsOff()">
+                        <div class="recipe">
+                            <h2>Shrimp Dumplings || Har Gow</h2>
+                            <div class="time">
+                                <div class="total">
+                                    <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 24 </p>
+                                </div>
+                                <div class="prep">
+                                    <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 1 Hour </p>
+                                </div>
+                                <div class="cook">
+                                    <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 10 Min </p>
+                                </div>
+                            </div>
+                            <p class="description">Whole shrimp and juicy filling steamed in a translucent wrapper!</p>
+                            <div class="columns">
+                                <section class="ingredients">
+                                    <h3>Ingredients</h3>
+                                    <h4>Filling:</h4>
+                                    <ul>
+                                        <li>1 pound 2 ounces shrimp</li>
+                                        <li>1 1/2 ounces pork or bacon fat</li>
+                                        <li>1 1/2 ounces bamboo shoots, finely chopped</li>
+                                        <li>1 green onion, finely chopped</li>
+                                        <li>1 teaspoon sugar</li>
+                                        <li>3 teaspoons light soy sauce</li>
+                                        <li>1/2 teaspoon sesame oil</li>
+                                        <li>1 egg white, lightly beaten</li>    
+                                        <li>1 tablespoon cornstarch</li>
+                                    </ul>
+                                    <h4>Dough:</h4>
+                                    <ul>
+                                        <li>1 1/3 cups wheat starch</li>
+                                        <li>3 teaspoons cornstarch</li>
+                                        <li>2 teaspoons oil</li>
+                                    </ul>
+                                </section>
+                                <section class="directions">
+                                    <h3>Directions</h3>
+                                    <ol>
+                                        <li>To make the filling, first peel and devein the shrimp and cut half of them into 1/2 inch chunks. Finely mince the remaining prawns and then combine all the shrimp in a large bowl. Add the remaining filling ingredients, mix and drain any excess liquid.</li>
+                                        <li>To make the dough, first combine the wheat starch, cornstarch and oil in a bowl. Add 1 cup of boiling water and mix until well combined. Add extra wheat starch if the dough remains sticky.</li>
+                                        <li>Roll the dough into a long cylinder, divide into 24 pieces and cover with a warm, damp cloth. Roll the dough into 4 inch rounds, working one piece at a time, between two pieces of oiled plastic wrap.</li>
+                                        <li>Fill each dough wrapper as you make it with a heaping teaspoon of the shrimp filling mixture. Spread a little water at the edges of the wrapper, folding the wrapper to make a half moon shape. Use your thumb and forefinger to seal the wrapper and gather the edges together in a closed crescent shape.</li>
+                                        <li>Cover the shrimp dumplings as you make them to prevent them from drying out.</li>
+                                        <li>Steam the shrimp dumplings in a bamboo steamer for 6-8 minutes, or until the wrappers are translucent. Serve with soy sauce or chili sauce for dipping.</li>
+                                    </ol>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+<!-- SHRIMP DUMPLINGS OVERLAY BUTTON -->
+                    <div>
+                        <button onclick="shrimpDumplingsOn()">Full Recipe</button>
+                    </div>
+<!-- ----- END SHRIMP DUMPLINGS OVERLAY ------ -->
+                    <div class="columns">
+                        <section class="ingredients">
+                            <h3>Ingredients</h3>
+                            <h4>Filling:</h4>
+                            <ul>
+                                <li>1 pound 2 ounces shrimp</li>
+                                <li>1 1/2 ounces pork or bacon fat</li>
+                                <li>1 1/2 ounces bamboo shoots, finely chopped</li>
+                                <li>1 green onion, finely chopped</li>
+                                <li>1 teaspoon sugar</li>
+                                <li>3 teaspoons light soy sauce</li>
+                                <li>1/2 teaspoon sesame oil</li>
+                                <li>1 egg white, lightly beaten</li>    
+                                <li>1 tablespoon cornstarch</li>
+                            </ul>
+                            <h4>Dough:</h4>
+                            <ul>
+                                <li>1 1/3 cups wheat starch</li>
+                                <li>3 teaspoons cornstarch</li>
+                                <li>2 teaspoons oil</li>
+                            </ul>
+                        </section>
+                        <section class="directions">
+                            <h3>Directions</h3>
+                            <ol>
+                                <li>To make the filling, first peel and devein the shrimp and cut half of them into 1/2 inch chunks. Finely mince the remaining prawns and then combine all the shrimp in a large bowl. Add the remaining filling ingredients, mix and drain any excess liquid.</li>
+                                <li>To make the dough, first combine the wheat starch, cornstarch and oil in a bowl. Add 1 cup of boiling water and mix until well combined. Add extra wheat starch if the dough remains sticky.</li>
+                                <li>Roll the dough into a long cylinder, divide into 24 pieces and cover with a warm, damp cloth. Roll the dough into 4 inch rounds, working one piece at a time, between two pieces of oiled plastic wrap.</li>
+                                <li>Fill each dough wrapper as you make it with a heaping teaspoon of the shrimp filling mixture. Spread a little water at the edges of the wrapper, folding the wrapper to make a half moon shape. Use your thumb and forefinger to seal the wrapper and gather the edges together in a closed crescent shape.</li>
+                                <li>Cover the shrimp dumplings as you make them to prevent them from drying out.</li>
+                                <li>Steam the shrimp dumplings in a bamboo steamer for 6-8 minutes, or until the wrappers are translucent. Serve with soy sauce or chili sauce for dipping.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+<!-- ----- CANTONESE SIU MAI ----- -->
+            <article id="cantonese-siu-mai" class="card">
+                <div class="image"></div>
+                <div class="recipe">
+                    <h2>Cantonese Siu Mai</h2>
+                    <div class="time">
+                        <div class="total">
+                            <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 30 </p>
+                        </div>
+                        <div class="prep">
+                            <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 30 min </p>
+                        </div>
+                        <div class="cook">
+                            <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 15 Min </p>
+                        </div>
+                    </div>
+                    <p class="description">An open-faced pork and shrimp stuffed dumpling. Very yummy and sunny with a dot of hot mustard.</p>
+                    
+<!-- ------ BEGIN SUI MAI OVERLAY ----- -->
+                    <div id="overlay-cantonese-siu-mai" onclick="cantoneseSiuMaiOff()">
+                        <div class="recipe">
+                            <h2>Cantonese Siu Mai</h2>
+                            <div class="time">
+                                <div class="total">
+                                    <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 30 </p>
+                                </div>
+                                <div class="prep">
+                                    <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 30 min </p>
+                                </div>
+                                <div class="cook">
+                                    <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 15 Min </p>
+                                </div>
+                            </div>
+                            <p class="description">An open-faced pork and shrimp stuffed dumpling. Very yummy and sunny with a dot of hot mustard.</p>
+        
+                            <div class="columns">
+                                <section class="ingredients">
+                                    <h3>Ingredients</h3>
+                                    <ul>
+                                        <li>6 ounces shrimp</li>
+                                        <li>1/2 cup peeled water chestnuts</li>
+                                        <li>1 pound ground pork</li>
+                                        <li>2 tablespoons light soy sauce</li>
+                                        <li>1 1/2 tablespoons Shaoxing rice wine</li>
+                                        <li>2 teaspoons sesame oil</li>
+                                        <li>1/4 teaspoon ground black pepper</li>
+                                        <li>2 tablespoons chopped ginger</li>
+                                        <li>1 green onion, finely chopped</li>
+                                        <li>1 egg white, lightly beaten</li>
+                                        <li>2 tablespoons cornstarch</li>
+                                        <li>30 square or round egg dumpling wrappers</li>
+                                    </ul>
+                                </section>
+                                <section class="directions">
+                                    <h3>Directions</h3>
+                                    <ol>
+                                        <li>Peel and devein the shrimp, squeeze out as much moisture as possible and then roughly chop.</li>
+                                        <li>Blanch the water chestnuts for 1 minute, drop into cold water and then roughly chop.</li>
+                                        <li>Combine the shrimp, water chestnuts and the remaining filling ingredients (everything except the wrappers) in a large bowl and stir until well-combined.</li>
+                                        <li>Place 1 tablespoon of filling in the center of each wrapper. Form a circle with your thumb and forefinger and shape the dumpling, so that it forms a fat cylinder with an open top. Pat the top and bottom of the dumpling to create flat surfaces on either end.</li>
+                                        <li>Steam the dumplings standing up in bamboo steamers on top of oiled paper punched with holes for 15 minutes. Serve with soy sauce or chili sauce for dipping.</li>
+                                    </ol>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+<!-- CANTONESE SIU MAI OVERLAY BUTTON -->                    
+                    <div>
+                        <button onclick="cantoneseSiuMaiOn()">Full Recipe</button>
+                    </div>
+
+<!-- ------ END CANTONESE SIU MAI OVERLAY ---- -->
+
+                    <div class="columns">
+                        <section class="ingredients">
+                            <h3>Ingredients</h3>
+                            <ul>
+                                <li>6 ounces shrimp</li>
+                                <li>1/2 cup peeled water chestnuts</li>
+                                <li>1 pound ground pork</li>
+                                <li>2 tablespoons light soy sauce</li>
+                                <li>1 1/2 tablespoons Shaoxing rice wine</li>
+                                <li>2 teaspoons sesame oil</li>
+                                <li>1/4 teaspoon ground black pepper</li>
+                                <li>2 tablespoons chopped ginger</li>
+                                <li>1 green onion, finely chopped</li>
+                                <li>1 egg white, lightly beaten</li>
+                                <li>2 tablespoons cornstarch</li>
+                                <li>30 square or round egg dumpling wrappers</li>
+                            </ul>
+                        </section>
+                        <section class="directions">
+                            <h3>Directions</h3>
+                            <ol>
+                                <li>Peel and devein the shrimp, squeeze out as much moisture as possible and then roughly chop.</li>
+                                <li>Blanch the water chestnuts for 1 minute, drop into cold water and then roughly chop.</li>
+                                <li>Combine the shrimp, water chestnuts and the remaining filling ingredients (everything except the wrappers) in a large bowl and stir until well-combined.</li>
+                                <li>Place 1 tablespoon of filling in the center of each wrapper. Form a circle with your thumb and forefinger and shape the dumpling, so that it forms a fat cylinder with an open top. Pat the top and bottom of the dumpling to create flat surfaces on either end.</li>
+                                <li>Steam the dumplings standing up in bamboo steamers on top of oiled paper punched with holes for 15 minutes. Serve with soy sauce or chili sauce for dipping.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+<!-- ----- STEAMED PORK BUNS ----- -->
+
+            <article id="steamed-pork-buns" class="card">
+                <div class="image"></div>
+                <div class="recipe">
+                    <h2>Steamed Pork Buns || Djing Char Siu Bao</h2>
+                    <div class="time">
+                        <div class="total">
+                            <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 8 </p>
+                        </div>
+                        <div class="prep">
+                            <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 90 min </p>
+                        </div>
+                        <div class="cook">
+                            <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 15 Min </p>
+                        </div>
+                    </div>
+                    <p class="description">Pillowy soft steamed buns hold a saucy pork filling that is both sweet and savory. A complete Comfort Dumpling.</p>
+
+<!-- ------ BEGIN STEAMED PORK BUNS OVERLAY ----- -->
+
+                    <div id="overlay-steamed-pork-buns" onclick="steamedPorkBunsOff()">
+                        <div class="recipe">
+                            <h2>Steamed Pork Buns || Djing Char Siu Bao</h2>
+                            <div class="time">
+                                <div class="total">
+                                    <img src="img/smile.png" alt="total number"><p class="time-details"><strong>Makes:</strong> 8 </p>
+                                </div>
+                                <div class="prep">
+                                    <img src="img/chopsticks.jpg" alt="prep time"><p class="time-details"><strong>Prep Time:</strong> 90 min </p>
+                                </div>
+                                <div class="cook">
+                                    <img src="img/clock.png" alt="cook time"><p class="time-details"><strong>Cook Time:</strong> 15 Min </p>
+                                </div>
+                            </div>
+                            <p class="description">Pillowy soft steamed buns hold a saucy pork filling that is both sweet and savory. A complete Comfort Dumpling.</p>
+
+                            <div class="columns">
+                                <section class="ingredients">
+                                    <h3>Ingredients</h3>
+                                    <h4>Yeast Dough:</h4>
+                                        <ul>
+                                            <li>1 1/2 teaspoons instant dry yeast</li>
+                                            <li>3/4 cup lukewarm water</li>
+                                            <li>2 tablespoons canola oil</li>
+                                            <li>2 tablespoons sugar</li>
+                                            <li>2 teaspoons baking powder</li>
+                                            <li>3 cups flour/li>
+                                        </ul>
+                                    <h4>Filling:</h4>
+                                        <ul>
+                                            <li>1 tablespoon sugar</li>
+                                            <li>1 tablespoon soy sauce</li>
+                                            <li>2 teaspoons oyster sauce</li>
+                                            <li>1 tablespoon water</li>
+                                            <li>2 teaspoons canola oil</li>
+                                            <li>salt and ground white pepper to taste</li>
+                                            <li>2 scallions, chopped white and green parts</li>
+                                            <li>1/2 pound char siu, diced</li>
+                                            <li>1 tablespoon Shaoxing rice wine</li>
+                                            <li>1 1/2 tablespoon cornstarch dissolved in 2 tablespoons water</li>
+                                        </ul>
+                                </section>
+                                <section class="directions">
+                                    <h3>Directions</h3>
+                                    <ol>
+                                        <li>Combine sugar, salt, white, pepper, soy sauce, oyster sauce and water in a small bowl and set aside.</li>
+                                        <li>Heat the oil in a skillet over medium heat. Add the scallions and cook, stirring constantly, for about a minute. Add the char siu and stir well. Add the soy sauce and oyster sauce mixture and cook, stirring frequently, for about 2 minutes, until the pork is heated through.</li>
+                                        <li>Add the Shaoxing rice wine to the dissolved cornstarch. Add the wine and cornstarch mixture to the warm pork and cook, stirring constantly, for another minute until the mixture has come together into a mass that you can mound. Transfer to a bowl and set aside to cool at room temperature before using.</li>
+                                        <li>Put the yeast in a small bowl, add the water and set aside for 1 minute to soften. Whisk in the oil to blend and dissolve the yeast. Set aside.</li>
+                                        <li>Combine sugar, baking powder and flour in a large bowl. Make a well in the center and pour in the yeast mixture. Slowly stir with a wooden spoon, moving from the center toward the rim, to work in all the flour. Keep stirring as a ragged but soft dough forms. Then use your fingers to gather and pat the dough together into a ball. Transfer to a clean work surface and knead for about 5 minutes until the dough is smooth and slightly elastic.</li>
+                                        <li>Place the dough in a large bowl that has been lightly oiled. Cover with plastic wrap and put it in a warm, draft-free place to rise for 45 minutes until the dough has nearly doubled.</li>
+                                        <li>Lightly dust a clean work surface with flour. Cut the dough in half and roll into a foot-long log. Cut the log into eight pieces.</li>
+                                        <li>Lightly dust a clean work surface with flour. Cut the dough in half and roll into a foot-long log. Cut the log into eight pieces.</li>
+                                        <li>Roll each piece into a ball and flatten gently into a small disc. Using a small rolling pin roll the edges and only the edges. There should be a small bulge at the center of the dough.</li>
+                                        <li>Place a tablespoon of the char siu filling in the center of the dough. Wrap the filling by pressing and pulling the edges of the dough. Gather the edges and twist the top to fully cover the filling.</li>
+                                        <li>Place each bun on a square of wax paper before steaming. Steam the buns in a bamboo steamer for 15 minutes, being careful to leave 1-2 inches between each.</li>
+                                    </ol>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+<!-- STEAMED PORK BUNS OVERLAY BUTTON -->                    
+                    <div>
+                        <button onclick="steamedPorkBunsOn()">Full Recipe</button>
+                    </div>
+
+<!-- ------ END STEAMED PORK BUNS OVERLAY ---- -->
+
+                    <div class="columns">
+                        <section class="ingredients">
+                            <h3>Ingredients</h3>
+                            <h4>Yeast Dough:</h4>
+                                <ul>
+                                    <li>1 1/2 teaspoons instant dry yeast</li>
+                                    <li>3/4 cup lukewarm water</li>
+                                    <li>2 tablespoons canola oil</li>
+                                    <li>2 tablespoons sugar</li>
+                                    <li>2 teaspoons baking powder</li>
+                                    <li>3 cups flour/li>
+                                </ul>
+                            <h4>Filling:</h4>
+                                <ul>
+                                    <li>1 tablespoon sugar</li>
+                                    <li>1 tablespoon soy sauce</li>
+                                    <li>2 teaspoons oyster sauce</li>
+                                    <li>1 tablespoon water</li>
+                                    <li>2 teaspoons canola oil</li>
+                                    <li>salt and ground white pepper to taste</li>
+                                    <li>2 scallions, chopped white and green parts</li>
+                                    <li>1/2 pound char siu, diced</li>
+                                    <li>1 tablespoon Shaoxing rice wine</li>
+                                    <li>1 1/2 tablespoon cornstarch dissolved in 2 tablespoons water</li>
+                                </ul>
+                        </section>
+                        <section class="directions">
+                            <h3>Directions</h3>
+                            <ol>
+                                <li>Combine sugar, salt, white, pepper, soy sauce, oyster sauce and water in a small bowl and set aside.</li>
+                                <li>Heat the oil in a skillet over medium heat. Add the scallions and cook, stirring constantly, for about a minute. Add the char siu and stir well. Add the soy sauce and oyster sauce mixture and cook, stirring frequently, for about 2 minutes, until the pork is heated through.</li>
+                                <li>Add the Shaoxing rice wine to the dissolved cornstarch. Add the wine and cornstarch mixture to the warm pork and cook, stirring constantly, for another minute until the mixture has come together into a mass that you can mound. Transfer to a bowl and set aside to cool at room temperature before using.</li>
+                                <li>Put the yeast in a small bowl, add the water and set aside for 1 minute to soften. Whisk in the oil to blend and dissolve the yeast. Set aside.</li>
+                                <li>Combine sugar, baking powder and flour in a large bowl. Make a well in the center and pour in the yeast mixture. Slowly stir with a wooden spoon, moving from the center toward the rim, to work in all the flour. Keep stirring as a ragged but soft dough forms. Then use your fingers to gather and pat the dough together into a ball. Transfer to a clean work surface and knead for about 5 minutes until the dough is smooth and slightly elastic.</li>
+                                <li>Place the dough in a large bowl that has been lightly oiled. Cover with plastic wrap and put it in a warm, draft-free place to rise for 45 minutes until the dough has nearly doubled.</li>
+                                <li>Lightly dust a clean work surface with flour. Cut the dough in half and roll into a foot-long log. Cut the log into eight pieces.</li>
+                                <li>Lightly dust a clean work surface with flour. Cut the dough in half and roll into a foot-long log. Cut the log into eight pieces.</li>
+                                <li>Roll each piece into a ball and flatten gently into a small disc. Using a small rolling pin roll the edges and only the edges. There should be a small bulge at the center of the dough.</li>
+                                <li>Place a tablespoon of the char siu filling in the center of the dough. Wrap the filling by pressing and pulling the edges of the dough. Gather the edges and twist the top to fully cover the filling.</li>
+                                <li>Place each bun on a square of wax paper before steaming. Steam the buns in a bamboo steamer for 15 minutes, being careful to leave 1-2 inches between each.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </main>
+    
+        <script>
+            function shrimpDumplingsOn() {
+              document.getElementById("overlay-shrimp-dumplings").style.display = "block";
+            }
+            
+            function shrimpDumplingsOff() {
+              document.getElementById("overlay-shrimp-dumplings").style.display = "none";
+            }
+
+            function cantoneseSiuMaiOn() {
+              document.getElementById("overlay-cantonese-siu-mai").style.display = "block";
+            }
+            
+            function cantoneseSiuMaiOff() {
+              document.getElementById("overlay-cantonese-siu-mai").style.display = "none";
+            }
+
+            function steamedPorkBunsOn() {
+              document.getElementById("overlay-steamed-pork-buns").style.display = "block";
+            }
+            
+            function steamedPorkBunsOff() {
+              document.getElementById("overlay-steamed-pork-buns").style.display = "none";
+            }
+        </script>
+    
+    </body>
+
+</html>

@@ -1,0 +1,230 @@
+body {
+    background-color: #faf9d1; 
+    color: #3B3B3B;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+header {
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+header img {
+    margin-right: 10px;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 40px 0;
+    font-family: 'Montserrat', san-serif;
+    color: #ed352c;
+    font-size: 24px; 
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    margin: 10px 0;
+    overflow: auto;
+}
+
+.image {
+    float: left;
+    width: 500px;
+    height: 550px;
+}
+
+.recipe {
+    float: left;
+    padding: 20px;
+    width: 500px;
+    height: 550px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+#shrimp-dumplings .image {
+    background-image: url("../img/shrimp-dumplings.jpg");
+    background-size: cover;
+}
+
+#cantonese-siu-mai .image {
+    background-image: url("../img/cantonese-siu-mai.jpg");
+    background-size: cover;
+}
+
+#steamed-pork-buns .image {
+    background-image: url("../img/steamed-pork-buns-header-new.jpg");
+    background-size: cover;
+}
+
+.recipe h2 {
+    color: #ed352c;
+    text-transform: uppercase;
+    font-family: 'Montserrat', san-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    line-height: 29px;
+}
+
+.time {
+    margin-bottom: 20px;
+    border: 1px solid #3B3B3B;
+    overflow: auto;
+}
+
+.time div {
+    float: left;
+    padding-left: 6px;
+    width: 33.3333%;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.time .cook {
+    border-left: 1px solid #3B3B3B;
+}
+
+.time .prep {
+    border-left: 1px solid #3B3B3B;
+}
+
+.time img {
+    width: 15px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.time-details {
+    display: inline-block;
+}
+
+.time strong {
+    font-family: 'Montserrat', san-serif;
+}
+
+.columns {
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+
+.directions {
+    float: left;
+    width: 240px;
+}
+
+.ingredients {
+    float: left;
+    width: 205px;
+    margin-right: 5px;
+}
+
+.recipe h3 {
+    padding: 2px;
+    border-top: 1px solid #3B3B3B;
+    border-bottom: 1px solid #3B3B3B;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ed352c; 
+    text-transform: uppercase;
+}
+
+.ingredients ul {
+    padding-left: 20px;
+    line-height: 23px;
+    list-style-type: square;
+}
+
+.directions ol {
+    padding-left: 20px;
+    line-height: 21px;
+}
+
+/* ***** OVERLAY ***** */
+button {
+    color: #ed352c; 
+    background-color: #fcfce8;
+    font-weight: 900;
+    border: 1px dashed #778899;
+}
+
+#overlay-shrimp-dumplings {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #overlay-shrimp-dumplings .recipe {
+    background-color: #FFFFFF;
+    height: 100%;
+  }
+
+  #overlay-shrimp-dumplings .columns {
+    background-color: #faf9d1;
+  }
+
+  #overlay-cantonese-siu-mai {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #overlay-cantonese-siu-mai .recipe {
+    background-color: #FFFFFF;
+    height: 100%;
+  }
+
+  #overlay-cantonese-siu-mai .columns {
+    background-color: #faf9d1;
+  }
+ 
+  #overlay-steamed-pork-buns {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #overlay-steamed-pork-buns .recipe {
+    background-color: #FFFFFF;
+    height: 100%;
+  }
+
+  #overlay-steamed-pork-buns .columns {
+    background-color: #faf9d1;
+    /* specific height to enable scroll on the overlay due to the column length exceeding browser */
+    height: 1000px; 
+  }
